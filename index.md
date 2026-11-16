@@ -1,6 +1,6 @@
 # Add-on manuals
 
-User manuals for three Blender add-ons by QuadFix Tools. Support: support@dynamicflower.pt
+User manuals for three Blender add-ons by Mendbox Studio. Support: support@dynamicflower.pt
 
 | Add-on | Version | What it does | Manual |
 |---|---|---|---|

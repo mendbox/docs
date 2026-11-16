@@ -16,7 +16,7 @@ Add "18 presets" to the heading line if there is room.
 
 **Platforms.** The page says "works on Windows, macOS and Linux". Replace with: "Pure Python on Blender's own tools, no external binaries. Tested on macOS; Windows and Linux should work but are not tested yet."
 
-**Manual link.** Add: "Full manual with screenshots: https://quadfix-tools.github.io/docs/bedsplit/".
+**Manual link.** Add: "Full manual with screenshots: https://mendbox.github.io/docs/bedsplit/".
 
 ## 2. Image Per Instance, Gumroad
 
@@ -24,8 +24,8 @@ Add "18 presets" to the heading line if there is room.
 - Platforms: replace "Pure Python: no binaries, no network, works on macOS, Windows and Linux." with "Pure Python: no binaries, no network. Tested on macOS; Windows and Linux are not tested yet."
 - Replace "Free updates. Questions: reply to your receipt email or write to support@dynamicflower.pt." with the unified line in section 5.
 - Superhive Documentation tab is at 0.1.x: replace it with the full manual (`image-per-instance/superhive_docs.md`).
-- Manifest `website` points to the GitHub org page: point it to https://quadfix-tools.github.io/docs/image-per-instance/ in the next release.
-- Add: "Full manual with screenshots: https://quadfix-tools.github.io/docs/image-per-instance/".
+- Manifest `website` points to the GitHub org page: point it to https://mendbox.github.io/docs/image-per-instance/ in the next release.
+- Add: "Full manual with screenshots: https://mendbox.github.io/docs/image-per-instance/".
 
 ## 3. QuadFix
 
@@ -37,7 +37,7 @@ Add "18 presets" to the heading line if there is room.
 - **Version History on Superhive** starts at 1.4.3. Add one entry "1.0 to 1.4.2" or the table from section 10 of the manual (`quadfix/superhive_docs.md`).
 - **Superhive Documentation tab:** replace with the full manual (adds Bridge to Quads, option defaults and ranges).
 - **Local `quadfix/README.md`** says 1.2 and lacks Bridge: replace with this manual (short form).
-- Add: "Full manual with screenshots: https://quadfix-tools.github.io/docs/quadfix/".
+- Add: "Full manual with screenshots: https://mendbox.github.io/docs/quadfix/".
 - Local `quadfix/gumroad/description.txt` is the old 1.2 text (no Bridge). The live Gumroad page is already newer. Do not paste the local file.
 
 ## 4. Support line (all pages)
