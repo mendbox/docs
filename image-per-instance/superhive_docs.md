@@ -1,4 +1,4 @@
-<!-- Paste-ready for the Superhive Documentation tab. Replace BASE_URL with the GitHub Pages address, no trailing slash. Same content as index.md. -->
+<!-- Paste-ready for the Superhive Documentation tab. Replace https://quadfix-tools.github.io/docs with the GitHub Pages address, no trailing slash. Same content as index.md. -->
 
 # Image Per Instance 0.2.0: user manual
 
@@ -14,7 +14,7 @@ Buy: [Superhive](https://superhivemarket.com/products/image-per-instance) | [Gum
 
 Image Per Instance puts a different picture on every object, array element or Geometry Nodes instance, using **one** material. You pick a folder of images, press **Build Atlas** (this packs all pictures into one big image), then give each object its own picture with one more button. No node trees to build by hand, no 100 copies of a material.
 
-![Different image on every instance, one material](BASE_URL/assets/image-per-instance/gif_instances.gif)
+![Different image on every instance, one material](https://quadfix-tools.github.io/docs/assets/image-per-instance/gif_instances.gif)
 
 **Who it is for**
 
@@ -49,7 +49,7 @@ Image Per Instance puts a different picture on every object, array element or Ge
 
 The panel works in Object Mode. The version number is shown at the bottom of the main panel ("Image Per Instance v0.2.0").
 
-![The Image Per Instance panel](BASE_URL/assets/image-per-instance/ipi_base.png)
+![The Image Per Instance panel](https://quadfix-tools.github.io/docs/assets/image-per-instance/ipi_base.png)
 
 **Update to a new version**
 
@@ -89,7 +89,7 @@ This manual describes the full version. Lite is the first two lines of the table
 4. Press **Build Atlas**. The panel now says "Atlas: N images".
 5. Select all the planes and press **Apply To Selected Objects**. Switch the viewport to **Material Preview** (the third sphere icon at the top right of the viewport) to see the pictures.
 
-![Panel clicks: apply images to objects](BASE_URL/assets/image-per-instance/gif_panel_apply.gif)
+![Panel clicks: apply images to objects](https://quadfix-tools.github.io/docs/assets/image-per-instance/gif_panel_apply.gif)
 
 For Geometry Nodes instances or the Array modifier: make the object that carries the modifier **active** and press **Add To Instances (Geometry Nodes)** instead of step 5 (see Example 2).
 
@@ -189,7 +189,7 @@ Tile size table (square tiles; the atlas is limited to 16384 px per side). This 
 4. Select all planes and press **Apply To Selected Objects**.
 5. To place a picture by name, rename planes `cat`, `dog`... and press **Match By Object Name**.
 
-![Different image on each object](BASE_URL/assets/image-per-instance/gif_apply.gif)
+![Different image on each object](https://quadfix-tools.github.io/docs/assets/image-per-instance/gif_apply.gif)
 
 ### Example 2: A wall of frames with an Array modifier or Instance on Points
 
@@ -199,7 +199,7 @@ Tile size table (square tiles; the atlas is limited to 16384 px per side). This 
 4. Press **Add To Instances (Geometry Nodes)**. The report names the objects that got the material.
 5. Set **Order** to Shuffle, change **Seed**, press the button again for a new arrangement.
 
-![Instances with a picture each](BASE_URL/assets/image-per-instance/gif_instances.gif)
+![Instances with a picture each](https://quadfix-tools.github.io/docs/assets/image-per-instance/gif_instances.gif)
 
 ### Example 3: An LED video wall
 
@@ -209,7 +209,7 @@ Tile size table (square tiles; the atlas is limited to 16384 px per side). This 
 4. Open **Animate**, tick the checkbox, set **Frames Per Image** to 48. Press Play.
 5. Render in Cycles or EEVEE.
 
-![Glowing screens](BASE_URL/assets/image-per-instance/gif_glow.gif)
+![Glowing screens](https://quadfix-tools.github.io/docs/assets/image-per-instance/gif_glow.gif)
 
 ### Example 4: Flipbook animation
 
@@ -218,7 +218,7 @@ Tile size table (square tiles; the atlas is limited to 16384 px per side). This 
 3. In **Animate**, tick the box and set **Frames Per Image** to 1 (a new picture every frame) or 2.
 4. Press Play in the timeline.
 
-![Animated pictures](BASE_URL/assets/image-per-instance/gif_animate.gif)
+![Animated pictures](https://quadfix-tools.github.io/docs/assets/image-per-instance/gif_animate.gif)
 
 ### Example 5: Many copies that do not look identical
 
@@ -226,7 +226,7 @@ Tile size table (square tiles; the atlas is limited to 16384 px per side). This 
 2. Set **Hue** 0.1, **Saturation** 0.2, **Brightness** 0.2. Tick **Flip X** if your pictures have no text.
 3. Every object now has its own colour variation. No rebuild needed.
 
-![Random variation](BASE_URL/assets/image-per-instance/gif_variation.gif)
+![Random variation](https://quadfix-tools.github.io/docs/assets/image-per-instance/gif_variation.gif)
 
 ---
 

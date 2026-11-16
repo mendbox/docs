@@ -1,4 +1,4 @@
-<!-- Paste-ready for the Gumroad product description / content page. Tables are converted to lists. Replace BASE_URL with the GitHub Pages address, no trailing slash. -->
+<!-- Paste-ready for the Gumroad product description / content page. Tables are converted to lists. Replace https://quadfix-tools.github.io/docs with the GitHub Pages address, no trailing slash. -->
 
 # QuadFix 1.4.5: user manual
 
@@ -13,7 +13,7 @@ Buy: [Superhive](https://superhivemarket.com/products/quadfix) | [Gumroad](https
 
 QuadFix repairs meshes in Blender. It closes holes with a grid of four-sided faces (quads), turns triangles and curved n-gons into quads, cleans up the mess a Boolean cut or an import leaves behind, bridges two edge loops with a clean strip of quads, and joins overlapping objects with a tidy quad seam. Select the problem, press one button, read the result in the panel.
 
-![QuadFix before and after: a sphere with a hole is closed with a quad grid](BASE_URL/assets/quadfix/gif_holes.gif)
+![QuadFix before and after: a sphere with a hole is closed with a quad grid](https://quadfix-tools.github.io/docs/assets/quadfix/gif_holes.gif)
 
 **Who it is for**
 
@@ -50,7 +50,7 @@ QuadFix repairs meshes in Blender. It closes holes with a grid of four-sided fac
 
 Most tools need **Edit Mode** (select a mesh, press `Tab`). Union to Quads needs **Object Mode**. The buttons that do not fit the current mode stay visible but greyed out, with a hint at the top of the panel ("Edit Mode tools: press Tab" or "Object Mode tool: press Tab"). The panel is hidden in other modes such as Sculpt.
 
-![The QuadFix tab in Edit Mode](BASE_URL/assets/quadfix/small_edit.png)
+![The QuadFix tab in Edit Mode](https://quadfix-tools.github.io/docs/assets/quadfix/small_edit.png)
 
 **Update to a new version**
 
@@ -88,7 +88,7 @@ Try it on a Blender sphere with a few faces deleted.
 4. Press **Select Non-Quads & Holes**. The footer says, for example, "12 non-quad faces, 9 boundary edges". That is what needs fixing.
 5. Press `A` again to select everything, then press **Fill Holes with Quads**. The footer reads "Filled 1 loop(s). Now: ... quads / ... tris / ... n-gons". Undo with `Cmd+Z` (Mac) or `Ctrl+Z` (Windows/Linux) if you do not like it.
 
-![Panel clicks: select the problems, fill the hole](BASE_URL/assets/quadfix/gif_panel_holes.gif)
+![Panel clicks: select the problems, fill the hole](https://quadfix-tools.github.io/docs/assets/quadfix/gif_panel_holes.gif)
 
 
 ## 4. Reference: every panel, button and setting
@@ -182,8 +182,8 @@ Shows the report line of the last tool ("Last result: none yet" at start) and th
 3. Press **Fill Holes with Quads**.
 4. Look at the result with **Select Non-Quads & Holes**: the boundary edge count is 0.
 
-![A sphere with a hole before and after](BASE_URL/assets/quadfix/holes_sphere_before.jpg)
-![The same sphere after Fill Holes with Quads](BASE_URL/assets/quadfix/holes_sphere_after.jpg)
+![A sphere with a hole before and after](https://quadfix-tools.github.io/docs/assets/quadfix/holes_sphere_before.jpg)
+![The same sphere after Fill Holes with Quads](https://quadfix-tools.github.io/docs/assets/quadfix/holes_sphere_after.jpg)
 
 Tip: a tilted band cut out of the sphere is rebuilt the same way.
 
@@ -194,8 +194,8 @@ Tip: a tilted band cut out of the sphere is rebuilt the same way.
 3. Press **Clean & Quad (Boolean Prep)**.
 4. Check the footer: triangles and n-gons should drop. Press **Select Non-Quads & Holes** to see what is left.
 
-![Boolean result before](BASE_URL/assets/quadfix/boolean_cleanup_before.jpg)
-![Boolean result after Clean and Quad](BASE_URL/assets/quadfix/boolean_cleanup_after.jpg)
+![Boolean result before](https://quadfix-tools.github.io/docs/assets/quadfix/boolean_cleanup_before.jpg)
+![Boolean result after Clean and Quad](https://quadfix-tools.github.io/docs/assets/quadfix/boolean_cleanup_after.jpg)
 
 ### Example 3: Triangulated scan to quads
 
@@ -204,8 +204,8 @@ Tip: a tilted band cut out of the sphere is rebuilt the same way.
 3. Press **N-gons to Quads**. Red faces in the solid-shading overlay are triangles left over; some are unavoidable on very irregular scans.
 4. If too many triangles remain, raise **Face Angle** and **Shape Angle** a little or turn on **Aggressive Quads**, undo, and press again.
 
-![Triangulated scan before](BASE_URL/assets/quadfix/scan_to_quads_before.jpg)
-![After N-gons to Quads](BASE_URL/assets/quadfix/scan_to_quads_after.jpg)
+![Triangulated scan before](https://quadfix-tools.github.io/docs/assets/quadfix/scan_to_quads_before.jpg)
+![After N-gons to Quads](https://quadfix-tools.github.io/docs/assets/quadfix/scan_to_quads_after.jpg)
 
 ### Example 4: Bridge two loops with quads
 
@@ -214,7 +214,7 @@ Tip: a tilted band cut out of the sphere is rebuilt the same way.
 3. Press **Bridge to Quads**. The report says how many quads, rows and reductions were made.
 4. Open **Edit > Adjust Last Operation** and try **Smoothness** 0.5 if the rings are tilted.
 
-![Bridge to Quads in the panel](BASE_URL/assets/quadfix/gif_panel_bridge.gif)
+![Bridge to Quads in the panel](https://quadfix-tools.github.io/docs/assets/quadfix/gif_panel_bridge.gif)
 
 ### Example 5: Union of two objects with a quad seam
 
@@ -223,7 +223,7 @@ Tip: a tilted band cut out of the sphere is rebuilt the same way.
 3. Press **Union to Quads** in the **Union (Object Mode)** panel.
 4. The sphere object now holds the joined mesh; the cylinder is hidden (`Alt+H` brings it back).
 
-![Union to Quads sphere and cylinder](BASE_URL/assets/quadfix/union_sphere_cylinder_pair.jpg)
+![Union to Quads sphere and cylinder](https://quadfix-tools.github.io/docs/assets/quadfix/union_sphere_cylinder_pair.jpg)
 
 
 ## 6. Troubleshooting

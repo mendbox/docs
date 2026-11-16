@@ -1,4 +1,4 @@
-<!-- Paste-ready for the Superhive Documentation tab. Replace BASE_URL with the GitHub Pages address, no trailing slash. Same content as index.md. -->
+<!-- Paste-ready for the Superhive Documentation tab. Replace https://quadfix-tools.github.io/docs with the GitHub Pages address, no trailing slash. Same content as index.md. -->
 
 # BedSplit 0.1.3: user manual
 
@@ -14,7 +14,7 @@ Buy: [Superhive](https://superhivemarket.com/products/bedsplit) | [Gumroad](http
 
 BedSplit cuts a 3D model into parts that fit the print bed (the flat plate) of your 3D printer. It repairs the model first, adds round dowel sockets (holes for little pegs) in every joint so the parts line up, lays each part flat, and exports one STL file per part plus the dowel. You choose your printer, press **Split to Bed**, and print.
 
-![BedSplit: a model cut into printable parts](BASE_URL/assets/bedsplit/gif_split.gif)
+![BedSplit: a model cut into printable parts](https://quadfix-tools.github.io/docs/assets/bedsplit/gif_split.gif)
 
 **Who it is for**
 
@@ -86,7 +86,7 @@ If no mesh is selected the panel shows "Select a mesh object".
 4. Press **Split to Bed**. The parts appear next to your model, flat, each in its own colour. The **Result** panel lists every part with a check mark.
 5. Press **Export STL** and choose a folder. Print all part files, and the dowel file as many times as its name says.
 
-![Panel clicks: split a model](BASE_URL/assets/bedsplit/gif_panel_split.gif)
+![Panel clicks: split a model](https://quadfix-tools.github.io/docs/assets/bedsplit/gif_panel_split.gif)
 
 ---
 
@@ -199,7 +199,7 @@ STL files contain geometry only: no colours, textures or UVs.
 4. Press **Split to Bed**. Check that every part has a check mark.
 5. **Export STL**, load the files in your slicer (PrusaSlicer, Bambu Studio, Cura). Print the dowels too.
 
-![Printer presets change the number of parts](BASE_URL/assets/bedsplit/gif_printers.gif)
+![Printer presets change the number of parts](https://quadfix-tools.github.io/docs/assets/bedsplit/gif_printers.gif)
 
 ### Example 2: A statue at 600 mm on a 220 mm printer
 
@@ -209,7 +209,7 @@ STL files contain geometry only: no colours, textures or UVs.
 4. Press **Find Cuts** to see the cut planes. Check that no cut goes through the face or a hand.
 5. Press **Split to Bed**.
 
-![Resize for print and cuts](BASE_URL/assets/bedsplit/gif_bed.gif)
+![Resize for print and cuts](https://quadfix-tools.github.io/docs/assets/bedsplit/gif_bed.gif)
 
 ### Example 3: A printer that is not in the list
 
@@ -224,7 +224,7 @@ STL files contain geometry only: no colours, textures or UVs.
 3. Press **Add cut** or the x button if needed.
 4. Press **Split to Bed**. The cuts you edited are used exactly.
 
-![Moving cut planes](BASE_URL/assets/bedsplit/gif_planes.gif)
+![Moving cut planes](https://quadfix-tools.github.io/docs/assets/bedsplit/gif_planes.gif)
 
 ### Example 5: Test the dowel fit before a long print
 
@@ -233,7 +233,7 @@ STL files contain geometry only: no colours, textures or UVs.
 3. If the dowel does not go in, raise **Clearance** by 0.1 and split again. If it is loose, lower it by 0.05.
 4. Then print all the parts with the final value.
 
-![Dowels and sockets](BASE_URL/assets/bedsplit/gif_dowels.gif)
+![Dowels and sockets](https://quadfix-tools.github.io/docs/assets/bedsplit/gif_dowels.gif)
 
 ### Example 6: A broken AI model
 
@@ -241,7 +241,7 @@ STL files contain geometry only: no colours, textures or UVs.
 2. Press **Split to Bed**. The Result panel says "Repaired: holes closed, normals fixed", "overlapping shells joined" or "surface rebuilt".
 3. If it says "Heavy repair: surface rebuilt, fine detail smoothed (X mm)", look at the parts. The shape moved by X mm in some places.
 
-![Repair before the cut](BASE_URL/assets/bedsplit/gif_repair.gif)
+![Repair before the cut](https://quadfix-tools.github.io/docs/assets/bedsplit/gif_repair.gif)
 
 ---
 
