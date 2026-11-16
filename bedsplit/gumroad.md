@@ -334,7 +334,7 @@ STL files contain geometry only: no colours, textures or UVs.
 
 ## 10. Support, compatibility and changelog
 
-**Support:** support@dynamicflower.pt. Include your Blender version, your operating system, the lines of the Result panel (copy the text), the printer you chose, and if possible the model or a small .blend that shows the problem.
+**Support:** support@mendboxstudio.com. Include your Blender version, your operating system, the lines of the Result panel (copy the text), the printer you chose, and if possible the model or a small .blend that shows the problem.
 
 **Compatibility, as tested:** the test suite passes on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS**. Exported parts were also checked by slicing them in PrusaSlicer. Windows and Linux were **not** tested.
 

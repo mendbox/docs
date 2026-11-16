@@ -337,7 +337,7 @@ Tile size table (square tiles; the atlas is limited to 16384 px per side). This 
 
 ## 10. Support, compatibility and changelog
 
-**Support:** support@dynamicflower.pt. Include your Blender version, your operating system, the message from the status bar, and if possible a small .blend file and two or three sample images.
+**Support:** support@mendboxstudio.com. Include your Blender version, your operating system, the message from the status bar, and if possible a small .blend file and two or three sample images.
 
 **Compatibility, as tested:** the automated tests pass on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS**. They build the scene, apply the add-on and check the rendered colour of every tile (separate objects and Geometry Nodes instances), plus fit modes, assign and match by name, mapping without UVs, animation, variation, the shuffle order, empty-folder handling and multi-slot sources. The 0.2.0 build was also clicked through by hand in Blender (a 20-step checklist). Windows and Linux were **not** tested.
 

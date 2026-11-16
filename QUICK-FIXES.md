@@ -22,7 +22,7 @@ Add "18 presets" to the heading line if there is room.
 
 - Add the video line: `Trailer: https://youtu.be/CLFAlI3Aa5c` (same as Superhive and the Lite README).
 - Platforms: replace "Pure Python: no binaries, no network, works on macOS, Windows and Linux." with "Pure Python: no binaries, no network. Tested on macOS; Windows and Linux are not tested yet."
-- Replace "Free updates. Questions: reply to your receipt email or write to support@dynamicflower.pt." with the unified line in section 5.
+- Replace "Free updates. Questions: reply to your receipt email or write to support@mendboxstudio.com." with the unified line in section 5.
 - Superhive Documentation tab is at 0.1.x: replace it with the full manual (`image-per-instance/superhive_docs.md`).
 - Manifest `website` points to the GitHub org page: point it to https://mendbox.github.io/docs/image-per-instance/ in the next release.
 - Add: "Full manual with screenshots: https://mendbox.github.io/docs/image-per-instance/".
@@ -33,7 +33,7 @@ Add "18 presets" to the heading line if there is room.
 - **Bridge minimum loop size.** Live text: "Bridge to Quads needs loops of at least four edges". The code accepts closed loops of three edges but a three-edge loop almost never takes a quad strip, and QuadFix then says to use Fill Holes. Suggested: "A three-edge loop is better closed with Fill Holes." Also state the limit that is missing everywhere: the two sides may differ by at most 4:1 in edge count.
 - **Tested-on wording (FAQ).** Superhive FAQ answer says "on macOS" while About says Windows, macOS and Linux. Use one sentence everywhere: "Tested on Blender 4.2.23, 4.5.14 and 5.2.2 on macOS. Pure Python, so it should run on Windows and Linux too, but those systems are not tested yet."
 - **Free updates wording.** Unify (section 5).
-- **Support channel wording.** Gumroad: "reply to your receipt email". Superhive: "message me here". Use on both: "Questions: support@dynamicflower.pt (Superhive buyers can also send a message here)."
+- **Support channel wording.** Gumroad: "reply to your receipt email". Superhive: "message me here". Use on both: "Questions: support@mendboxstudio.com (Superhive buyers can also send a message here)."
 - **Version History on Superhive** starts at 1.4.3. Add one entry "1.0 to 1.4.2" or the table from section 10 of the manual (`quadfix/superhive_docs.md`).
 - **Superhive Documentation tab:** replace with the full manual (adds Bridge to Quads, option defaults and ranges).
 - **Local `quadfix/README.md`** says 1.2 and lacks Bridge: replace with this manual (short form).
@@ -42,7 +42,7 @@ Add "18 presets" to the heading line if there is room.
 
 ## 4. Support line (all pages)
 
-The Superhive page shows the Cloudflare-obfuscated email. Write the address in plain text in the description: support@dynamicflower.pt. Add: "Please include your Blender version, operating system and the report line from the panel."
+The Superhive page shows the Cloudflare-obfuscated email. Write the address in plain text in the description: support@mendboxstudio.com. Add: "Please include your Blender version, operating system and the report line from the panel."
 
 ## 5. Unified "free updates" line
 

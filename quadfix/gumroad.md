@@ -343,7 +343,7 @@ Tip: a tilted band cut out of the sphere is rebuilt the same way.
 
 ## 10. Support, compatibility and changelog
 
-**Support:** support@dynamicflower.pt. Include your Blender version, your operating system, the report line from the footer (copy the text), and, if possible, a small .blend file that shows the problem.
+**Support:** support@mendboxstudio.com. Include your Blender version, your operating system, the report line from the footer (copy the text), and, if possible, a small .blend file that shows the problem.
 
 **Compatibility, as tested:** the automated test suite passes on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS**. It runs each tool under vertex, edge and face select modes, with partial selections, checks undo, and includes a 200,000-face performance case. Windows and Linux were **not** tested.
 
