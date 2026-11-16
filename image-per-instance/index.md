@@ -1,3 +1,5 @@
+> The manual has moved to https://mendboxstudio.com/docs/image-per-instance
+
 # Image Per Instance 0.2.0: user manual
 
 *Manual for Image Per Instance 0.2.0 (Blender add-on). Trailer: <https://youtu.be/CLFAlI3Aa5c>*

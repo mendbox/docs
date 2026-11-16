@@ -1,3 +1,5 @@
+> The manuals have moved to https://mendboxstudio.com/docs
+
 # Add-on manuals
 
 User manuals for three Blender add-ons by Mendbox Studio. Support: support@dynamicflower.pt

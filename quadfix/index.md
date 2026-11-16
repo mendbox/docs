@@ -1,3 +1,5 @@
+> The manual has moved to https://mendboxstudio.com/docs/quadfix
+
 # QuadFix 1.4.5: user manual
 
 *Manual for QuadFix 1.4.5 (Blender add-on). Trailer: <https://youtu.be/h_6LSHC6sQY>*

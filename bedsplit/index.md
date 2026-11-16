@@ -1,3 +1,5 @@
+> The manual has moved to https://mendboxstudio.com/docs/bedsplit
+
 # BedSplit 0.1.3: user manual
 
 *Manual for BedSplit 0.1.3 (Blender add-on). Trailer: <https://youtu.be/-EbloCRxfUs>*
