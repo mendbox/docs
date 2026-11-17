@@ -60,7 +60,7 @@ The work runs in a second, hidden copy of Blender. **Your Blender stays usable a
 **Requirements**
 
 - Blender **4.2 LTS or newer** (4.2 LTS, 4.5 LTS and 5.x). AssetBake is a Blender *extension*.
-- **Tested on macOS only.** The automatic test suite passes on Blender 4.2.23, 4.5.14 and 5.2.2 on a Mac with Apple Silicon. Windows and Linux have not been tested yet. The code for them is written, but nobody has run it.
+- **Tested on macOS and Linux.** The automatic test suite passes on Blender 4.2.23, 4.5.14 and 5.2.2 on a Mac with Apple Silicon. On Linux (x86-64) Game and Quad-dominant were checked on Blender 4.2.23 and 5.2.2. Windows has not been tested yet.
 - **Quad-dominant mode** is built for **macOS (Apple Silicon)** and **Linux (x86-64)**. There is **no Windows build yet**: on Windows the Quad-dominant button is greyed out and **Game mode** does the work. (On a Mac with an Intel processor there is no build either.)
 - Blender's own **"glTF 2.0 format" add-on** must be on (it is on by default). Export GLB needs it.
 - About 2 to 8 GB of free memory for normal AI models (more for very big ones, see section 8).
@@ -664,7 +664,7 @@ If the count is not within 5 % of the budget, the Result says why (section 5.2):
 
 ### 9.1 Known limitations
 
-- **Tested on macOS only.** Blender 4.2 LTS, 4.5 LTS and 5.x pass the automatic tests on a Mac with Apple Silicon. Windows and Linux are untested. The Linux remesher build passed its own build checks but has never been loaded in Blender by us.
+- **Tested on macOS and Linux.** Blender 4.2 LTS, 4.5 LTS and 5.x pass the automatic tests on a Mac with Apple Silicon. On Linux (x86-64) Game and Quad-dominant were checked on Blender 4.2.23 and 5.2.2 (same results as on the Mac within 1-2 %). Windows is untested.
 - **Quad-dominant:** no Windows build. About one thick model in eight still falls back to Game for a small local defect, and the result can change between neighbouring budgets and between Blender 4.x and 5.x. Sources over 2,000,000 triangles are not tried. Hidden surface is not removed in this mode. The triangles along the seam between quads and thin parts are closed but stretched. Nothing is promised about rigging or subdivision.
 - **Rigs, weights, animation, shape keys, constraints are dropped.** The asset is a static mesh in the rest shape.
 - **Transparency is a cut-out only.** No glass-like blending.
@@ -768,7 +768,7 @@ If the count is not within 5 % of the budget, the Result says why (section 5.2):
 
 **Source and licence:** the extension is GPL-3.0-or-later. Corresponding source of the bundled remesher (GPL-3.0 section 6): https://github.com/mendbox/im-remesh (tag `v0.1.2`).
 
-**Compatibility, as tested:** Blender 4.2.23, 4.5.14 and 5.2.2 on **macOS** (Apple Silicon): 33 test cases and 1,011 checks per version passed (last full run on the 0.2.2 build). **Windows and Linux were not tested.** Quad-dominant is built for macOS (Apple Silicon) and Linux (x86-64); there is no Windows build yet.
+**Compatibility, as tested:** Blender 4.2.23, 4.5.14 and 5.2.2 on **macOS** (Apple Silicon): 33 test cases and 1,011 checks per version passed (last full run on the 0.2.2 build). **Linux: checked on Blender 4.2.23 and 5.2.2. Windows was not tested.** Quad-dominant is built for macOS (Apple Silicon) and Linux (x86-64); there is no Windows build yet.
 
 **Changelog**
 
