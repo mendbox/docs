@@ -4,7 +4,7 @@
 
 *Manual for QuadFix 1.4.5 (Blender add-on). Trailer: <https://youtu.be/h_6LSHC6sQY>*
 
-Buy: [Superhive](https://superhivemarket.com/products/quadfix) | [Gumroad](https://quadfix.gumroad.com/l/quadfix) | Free Lite version: [GitHub](https://github.com/mendbox/quadfix-lite)
+Buy: [Superhive](https://superhivemarket.com/products/quadfix) | [Gumroad](https://mendbox.gumroad.com/l/quadfix) | Free Lite version: [GitHub](https://github.com/mendbox/quadfix-lite)
 
 **Contents:** [1 What it does](#1-what-it-does) | [2 Install](#2-requirements-and-installation) | [3 Quick start](#3-quick-start) | [4 Reference](#4-reference-every-panel-button-and-setting) | [5 Worked examples](#5-worked-examples) | [6 Troubleshooting](#6-troubleshooting) | [7 Limitations](#7-known-limitations) | [8 Glossary](#8-glossary) | [9 FAQ](#9-faq) | [10 Support and changelog](#10-support-compatibility-and-changelog)
 

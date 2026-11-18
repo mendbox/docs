@@ -1,8 +1,8 @@
 > The manual lives at https://mendboxstudio.com/docs/assetbake
 
-# AssetBake 0.2.3: user manual
+# AssetBake 0.2.5: user manual
 
-*Manual for AssetBake 0.2.3 (Blender extension by Mendbox Studio). Written from the add-on's own code: every label, default, range and message below is what the add-on really shows.*
+*Manual for AssetBake 0.2.5 (Blender extension by Mendbox Studio). Written from the add-on's own code: every label, default, range and message below is what the add-on really shows.*
 
 Buy: [Superhive](SUPERHIVE_URL) | [Gumroad](GUMROAD_URL) | Free Lite version: [LITE_URL](LITE_URL) | Website: <https://mendboxstudio.com> | Trailer: TRAILER_URL
 
@@ -73,19 +73,19 @@ The work runs in a second, hidden copy of Blender. **Your Blender stays usable a
 1. In Blender open **Edit > Preferences** (Mac: `Cmd+,`; Windows and Linux: use the menu).
 2. Click **Get Extensions** in the list on the left.
 3. Click the small arrow menu (a down arrow) in the top-right corner and choose **Install from Disk...**
-4. Pick the `assetbake-0.2.3.zip` file and confirm. (Never unpack the zip yourself and copy the folder.)
+4. Pick the `assetbake-0.2.5.zip` file and confirm. (Never unpack the zip yourself and copy the folder.)
 5. The extension turns on. If its checkbox is not ticked, tick it. Close Preferences.
 
 > **[PLACEHOLDER: screenshot of Edit > Preferences > Get Extensions > arrow menu > Install from Disk]**
 
-*If your browser added a note to the file name, for example `assetbake-0.2.3 (1).zip`, that is fine.*
+*If your browser added a note to the file name, for example `assetbake-0.2.5 (1).zip`, that is fine.*
 
 **Where is the panel?**
 
 1. Move the mouse pointer over the **3D Viewport** (the big window with the 3D scene).
 2. Press `N` to open the sidebar (the same key on Mac, Windows and Linux).
 3. Click the tab named **AssetBake** (written vertically at the right edge).
-4. You see two panels: **AssetBake 0.2.3** (settings and the Make Game Asset button) and **Result · AssetBake v0.2.3** below it. The version number in the title tells you which version is installed.
+4. You see two panels: **AssetBake 0.2.5** (settings and the Make Game Asset button) and **Result · AssetBake v0.2.5** below it. The version number in the title tells you which version is installed.
 
 The panel works in **Object Mode**. In any other mode (Edit Mode, Sculpt Mode) the settings are greyed out and the panel says "Go to Object Mode to make an asset".
 
@@ -155,7 +155,7 @@ The sidebar tab **AssetBake** has two panels. All settings are saved in your .bl
 
 *Interim picture from an earlier build ("AI Asset Maker"). The boxes and controls are the same; the title now says AssetBake.*
 
-### 4.1 Panel "AssetBake 0.2.3" (settings), in the order you see it
+### 4.1 Panel "AssetBake 0.2.5" (settings), in the order you see it
 
 #### Box "Mode"
 
@@ -221,7 +221,7 @@ Notes on Scope:
 - With **one asset per part**, tiny loose pieces (eyes, buttons, debris) do not become assets: each joins the nearest large part. A part counts as large when its size is at least **30 %** of the largest part.
 - More than **24** large parts, or more than **2,000** loose pieces: the split is refused, one asset is made for the whole selection, and a warning says so.
 - Assets are named `<name>_asset_01`, `<name>_asset_02` ... largest first. Each gets its origin at the bottom centre of the part.
-- The hidden-surface step looks at the surface with test rays from many directions. It needs at least 0.5 % of the area to be hidden before it removes anything. It is **switched off when the source has transparency** (glass hides nothing). In **Quad-dominant** mode it is not used.
+- The hidden-surface step looks at the surface with test rays from many directions. It needs at least 0.5 % of the area to be hidden before it removes anything. It is **switched off when the source has transparency** (glass hides nothing). In **Quad-dominant** mode it is used for one kind of file only: models from **TRELLIS.2** are written as a crust, with a second skin just under the visible one and more layers inside, so every wall looks paper-thin. With the box ticked, AssetBake leaves out the layers that cannot be seen from outside, closes the openings and builds the quads on the visible surface; the Result box then says "N % of the surface is inner layers that cannot be seen from outside ...". With the box unticked such a file becomes a Game asset ("N % of the surface is thinner than one quad ..."). Very detailed TRELLIS.2 models can still fall back to Game; the Result box gives the reason.
 
 #### Below the boxes: messages, progress, Make Game Asset
 
@@ -240,7 +240,7 @@ Notes on Scope:
 
 The progress text goes through these stages: Reading the selection, Cleaning the source (N triangles), Splitting into parts (only with one asset per part), Building the low mesh, Reducing the source, Looking for hidden surface, Decimating to the budget, (Quad-dominant: Reading the wall thickness, Building quads, Building quads, second attempt, Checking the quad mesh), Measuring the shape, Unwrapping UVs, Baking (with the map names, and "second pass for N missed texels"), Packing the textures, Saving the result. With several assets the text starts with "Asset 2 of 5:".
 
-### 4.2 Panel "Result · AssetBake v0.2.3"
+### 4.2 Panel "Result · AssetBake v0.2.5"
 
 | What you see | Meaning |
 |---|---|
@@ -774,6 +774,7 @@ If the count is not within 5 % of the budget, the Result says why (section 5.2):
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.5 | 2026-11-17 | Quad-dominant handles **TRELLIS.2 crust models** (a second skin under the visible one): the inner layers are left out and the quads follow the visible surface, where every such model became a Game asset before. Includes 0.2.4 (not released on its own): a source under the budget keeps its geometry in Quad-dominant; a face and its exact back side are both removed in the quad clean-up. |
 | 0.2.3 | 2026-11-17 | The panel title shows the version. Quad-dominant: faces that share the same three points are reduced to one, so the GLB matches the asset. |
 | 0.2.2 | 2026-11-17 | Better use of the texture space of some UV layouts (a rule about where each face starts). |
 | 0.2.1 | 2026-11-17 | Product renamed to **AssetBake** (formerly "AI Asset Maker"). The result no longer depends on the order of the source's points and faces. Review fixes. |

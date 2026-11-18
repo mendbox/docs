@@ -4,7 +4,7 @@
 
 *Manual for Image Per Instance 0.2.0 (Blender add-on). Trailer: <https://youtu.be/CLFAlI3Aa5c>*
 
-Buy: [Superhive](https://superhivemarket.com/products/image-per-instance) | [Gumroad](https://quadfix.gumroad.com/l/image-per-instance) | Free Lite version: [GitHub](https://github.com/mendbox/image-per-instance-lite)
+Buy: [Superhive](https://superhivemarket.com/products/image-per-instance) | [Gumroad](https://mendbox.gumroad.com/l/image-per-instance) | Free Lite version: [GitHub](https://github.com/mendbox/image-per-instance-lite)
 
 **Contents:** [1 What it does](#1-what-it-does) | [2 Install](#2-requirements-and-installation) | [3 Quick start](#3-quick-start) | [4 Reference](#4-reference-every-panel-button-and-setting) | [5 Worked examples](#5-worked-examples) | [6 Troubleshooting](#6-troubleshooting) | [7 Limitations](#7-known-limitations) | [8 Glossary](#8-glossary) | [9 FAQ](#9-faq) | [10 Support and changelog](#10-support-compatibility-and-changelog)
 
