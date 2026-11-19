@@ -1,8 +1,8 @@
 > The manual has moved to https://mendboxstudio.com/docs/bedsplit
 
-# BedSplit 0.1.3: user manual
+# BedSplit 0.2.2: user manual
 
-*Manual for BedSplit 0.1.3 (Blender add-on). Trailer: <https://youtu.be/-EbloCRxfUs>*
+*Manual for BedSplit 0.2.2 (Blender add-on). Trailer: <https://youtu.be/-EbloCRxfUs>*
 
 Buy: [Superhive](https://superhivemarket.com/products/bedsplit) | [Gumroad](https://mendbox.gumroad.com/l/bedsplit) | Free Lite version: [GitHub](https://github.com/mendbox/bedsplit-lite)
 
@@ -12,7 +12,7 @@ Buy: [Superhive](https://superhivemarket.com/products/bedsplit) | [Gumroad](http
 
 ## 1. What it does
 
-BedSplit cuts a 3D model into parts that fit the print bed (the flat plate) of your 3D printer. It repairs the model first, adds round dowel sockets (holes for little pegs) in every joint so the parts line up, lays each part flat, and exports one STL file per part plus the dowel. You choose your printer, press **Split to Bed**, and print.
+BedSplit cuts a 3D model into parts that fit the print bed (the flat plate) of your 3D printer. It repairs the model first, adds a joint to every cut so the parts line up (round dowel sockets, holes for little pegs, or interlocking dovetail keys), lays each part flat, and exports one STL file per part plus the dowels if you use them. You choose your printer, press **Split to Bed**, and print.
 
 ![BedSplit: a model cut into printable parts](../assets/bedsplit/gif_split.gif)
 
@@ -49,7 +49,7 @@ It is made for FDM printers (the common kind that melts plastic filament).
 1. Hover the mouse over the 3D viewport. Be in **Object Mode** (the panel only shows in Object Mode).
 2. Press `N` to open the sidebar.
 3. Click the tab named **BedSplit** (written vertically at the right edge).
-4. There are two panels: **BedSplit** (settings and the Split button) and **Result  ·  BedSplit v0.1.3** below it.
+4. There are two panels: **BedSplit** (settings and the Split button) and **Result  ·  BedSplit v0.2.2** below it.
 
 If no mesh is selected the panel shows "Select a mesh object".
 
@@ -73,6 +73,7 @@ If no mesh is selected the panel shows "Select a mesh object".
 | Split to Bed (automatic flat cuts, closed parts) | yes | yes |
 | Parts laid flat, per-part STL export, undo | yes | yes |
 | Dowels and sockets (diameter, depth, clearance, dowels per joint) | no | yes |
+| Dovetail keys (interlocking joints, nothing loose to print) | no | yes |
 | Mesh repair (holes, flipped normals, overlapping shells, AI meshes) | no (closed meshes only) | yes |
 | Find Cuts and movable cut planes | no (automatic cuts only) | yes |
 
@@ -150,31 +151,42 @@ How size is read: BedSplit measures the model in world space (position, rotation
 
 If you have a cut list, **Split to Bed** uses exactly those cuts. Removing every cut returns to "Automatic". Changing the printer, bed size or the Resize settings clears the cut list, because the cuts no longer match.
 
-#### Box "Dowels"
+#### Box "Joints"
+
+The row **Dowels | Dovetail keys** chooses the joint used on every cut. The settings of the chosen joint show below it. **Clearance** is shared by both.
 
 | Control | What it does | When to use it | Default / range |
 |---|---|---|---|
-| **Dowel diameter, mm** | Thickness of the round peg. | Thicker for big parts. | 6.0, range 2 to 20 |
-| **Depth in each part, mm** | How deep the socket goes into each part. The dowel is twice this long. | | 6.0, range 2 to 30 |
-| **Clearance, mm** | Gap between dowel and socket. 0.2 suits most printers. Raise it if dowels do not go in, lower it if they are loose. | Test with one small joint first. | 0.20, range 0 to 1 |
-| **Dowels per joint** | The largest number of dowels placed on one cut face. | More dowels for big faces. | 2, range 1 to 3 |
+| **Dowel diameter, mm** (Dowels) | Thickness of the round peg. | Thicker for big parts. | 6.0, range 2 to 20 |
+| **Depth in each part, mm** (Dowels) | How deep the socket goes into each part. The dowel is twice this long. | | 6.0, range 2 to 30 |
+| **Dowels per joint** (Dowels) | The largest number of dowels placed on one cut face. | More dowels for big faces. | 2, range 1 to 3 |
+| **Keys per joint** (Dovetail keys) | The largest number of keys on one cut face. | | 2, range 1 to 3 |
+| **Size from cut face** (Dovetail keys) | On: the key width is 6 to 12 mm, the largest that fits the cut face. Off: you type **Key width, mm** and **Key height, mm**. The key is 1.5 times as long as it is wide, the socket 3 times. | Turn off to force one size on all keys. | On |
+| **Angle** (Dovetail keys) | Slope of the key sides. More angle holds better and leaves a thinner neck. | | 20, range 10 to 30 |
+| **Clearance, mm** (both) | Gap between dowel or key and its socket. 0.2 suits most printers. Raise it if the parts do not go together, lower it if they are loose. | Test with one small joint first. | 0.20, range 0 to 1 |
 
-A socket is placed only where the wall around it is thick enough: about 1.6 mm of material around each socket plus the clearance. With the defaults a cut section needs to be roughly 10 mm wide at that spot. Joints where it does not fit get no dowel and the Result panel tells you ("glue these").
+A dowel socket is placed only where the wall around it is thick enough: about 1.6 mm of material around each socket plus the clearance. With the defaults a cut section needs to be roughly 10 mm wide at that spot. Joints where it does not fit get no dowel and the Result panel tells you ("glue these").
+
+**Dovetail keys.** A dovetail tail is part of the part below a cut and a keyhole socket is in the part above it. Nothing loose is printed. Push the two parts together, then slide one along the key until it stops: the joint holds against pulling apart. The keys are printed as part of the parts, with no supports needed for the key or the socket. The clearance (0.2 mm by default, adjustable) is the gap between key and socket. With cuts in more than one direction, join one direction at a time (all X joints, then Y, then Z). A drop of glue keeps the joint from sliding back.
+
+**Mixing joints.** After **Find Cuts** each cut row has a menu **Auto / Dowel / Key**. Auto uses the joint chosen in the box Joints; set a cut to Dowel or Key to use that joint on this cut only.
+
+**When a key is not possible.** A part that carries a key stands the way it stands in the model, so the key prints without supports. If a part has no flat side to stand on (a ball, a figure without a flat base), BedSplit puts dowels on that cut instead of keys, lays the part on a cut face, and says so in the Result panel. A cut you set to Key by hand keeps its key and shows a warning. A key needs room: the cut face must be about 22 x 11 mm at least. Smaller faces get no key and the panel names these joints.
 
 #### The big button
 
 | Control | What it does |
 |---|---|
-| **Split to Bed** | Repairs the model, cuts it into parts that fit the printer, adds dowel sockets, and creates the parts as new objects. Your original model is **not changed**. Works in Object Mode with a mesh selected. |
+| **Split to Bed** | Repairs the model, cuts it into parts that fit the printer, adds the joints (dowel sockets or dovetail keys), and creates the parts as new objects. Your original model is **not changed**. Works in Object Mode with a mesh selected. |
 
 What you get:
 
 - A collection "BedSplit - <model name>" next to your model. If you split the same model again, the previous result for it is replaced.
 - Parts named "<model> part 01", "part 02"... laid out in a grid beside the original, each turned so its largest cut face lies flat on the ground. Viewport colours show each part (Solid mode).
-- One extra object "<model> dowel xN": the dowel, to print N times.
+- With dowels: one extra object "<model> dowel xN", the dowel, to print N times. With dovetail keys there is nothing extra to print.
 - The new parts are selected. The original stays active so the panel keeps working on it.
 
-### 4.2 Panel "Result  ·  BedSplit v0.1.3"
+### 4.2 Panel "Result  ·  BedSplit v0.2.2"
 
 | Item | Meaning |
 |---|---|
@@ -235,6 +247,15 @@ STL files contain geometry only: no colours, textures or UVs.
 
 ![Dowels and sockets](../assets/bedsplit/gif_dowels.gif)
 
+### Example 7: Dovetail keys instead of dowels
+
+1. Select the model, choose your printer, press **Find Cuts**.
+2. In the box **Joints** click **Dovetail keys**. To use keys on one cut only, set that cut from **Auto** to **Key** instead.
+3. Press **Split to Bed**. The Result panel shows how many keys were made and names any cut that got dowels instead.
+4. Export STL and print the parts (no extra files to print). After printing, push two parts together and slide one until it stops. If they do not go together raise **Clearance** by 0.1 and split again.
+
+![Dovetail keys](../assets/bedsplit/gif_keys.gif)
+
 ### Example 6: A broken AI model
 
 1. Import the Meshy, Tripo or Hunyuan3D model. Select it.
@@ -294,7 +315,9 @@ STL files contain geometry only: no colours, textures or UVs.
 ## 7. Known limitations
 
 - Cuts are flat planes along the world X, Y and Z axes. No curved cuts, no cuts along natural seams. You can move planes but not rotate them.
-- Round dowels only. No dovetails, magnets or snap-fit.
+- Joints are round dowels or dovetail keys. No magnets, no snap-fit.
+- A dovetail key needs room: the cut face must be about 22 x 11 mm at least (on side cuts at least 22 mm high). The key locks against pulling apart, not against sliding back: glue it or let gravity hold it.
+- A part that carries a key cannot lie on that cut face. It stands the way it stands in the model, so its underside may need supports like the uncut model would.
 - Thin walls (under about 10 mm at the joint with default settings) get no dowel; glue them.
 - Heavily broken meshes are rebuilt with a voxel remesh. This closes them but smooths fine detail.
 - No hollowing, no supports, no 3MF export. Made for FDM printing.
@@ -313,7 +336,8 @@ STL files contain geometry only: no colours, textures or UVs.
 - **Slicer:** the program that turns a model into printer instructions (PrusaSlicer, Bambu Studio, Cura).
 - **Dowel:** a small round peg that fits into sockets of two parts to line them up.
 - **Socket:** the hole for the dowel.
-- **Clearance:** the small gap between dowel and socket so the peg slides in.
+- **Clearance:** the small gap between dowel (or key) and socket so the parts go together.
+- **Dovetail key:** a wedge-shaped tail on one part that slides into a matching keyhole socket in the other and locks the joint against pulling apart.
 - **Watertight / closed / manifold:** a mesh with no holes, like a sealed bottle. Slicers need this.
 - **Non-manifold:** a mesh with holes, loose edges or edges shared by more than two faces.
 - **Normals:** the direction each face points (outward on a good mesh). Flipped normals point inward.
@@ -330,7 +354,7 @@ STL files contain geometry only: no colours, textures or UVs.
 
 **Does it work with AI-generated or broken meshes?** Yes. Holes, flipped normals, overlapping shells and non-manifold geometry are repaired before the cut. Very broken meshes are rebuilt with a voxel remesh, which smooths fine detail; the panel warns and shows how far the surface moved.
 
-**What connectors does it make?** Round dowels: a socket in both faces of each joint, and one dowel STL to print as many times as the file name says.
+**What connectors does it make?** Your choice per split, or per cut: round dowels (a socket in both faces of each joint, and one dowel STL to print as many times as the file name says) or dovetail keys (a key on one part and a socket in the other, nothing loose to print).
 
 **Can I choose where the cuts go?** Yes: Find Cuts, change numbers, add or remove cuts, split again.
 
@@ -342,7 +366,7 @@ STL files contain geometry only: no colours, textures or UVs.
 
 **Does it change my model?** No. The parts are new objects in a new collection.
 
-**How do I glue the parts?** Push the dowels in (with a drop of glue if you like) and glue the cut faces with cyanoacrylate or epoxy. This is general 3D printing practice; BedSplit does not prescribe a glue.
+**How do I glue the parts?** Push the dowels in (or slide the keys together) (with a drop of glue if you like) and glue the cut faces with cyanoacrylate or epoxy. This is general 3D printing practice; BedSplit does not prescribe a glue.
 
 **Does it work on Windows and Linux?** It is pure Python. Tested on macOS only.
 
@@ -364,6 +388,9 @@ STL files contain geometry only: no colours, textures or UVs.
 
 | Version | Date | Change |
 |---|---|---|
+| 0.2.2 | 2026-11-18 | Fix: a cut exactly through vertices or edges of the model no longer loses volume; the Result reports an error if the volume check fails |
+| 0.2.1 | 2026-11-18 | Dovetail keys print without supports; parts that cannot stand on a flat side get dowels on that cut and the Result says so; STL export of concave cut faces fixed |
+| 0.2.0 | 2026-11-18 | Dovetail keys as an alternative to dowels, per-cut joint type, shared clearance |
 | 0.1.3 | 2026-11-13 | First public release: 18 printer presets and Custom size, Resize for print, Find Cuts with movable cut planes, repair of broken meshes, dowels and sockets, parts laid flat, Result checks, Export STL |
 
 There were no public releases before 0.1.3.
