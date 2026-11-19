@@ -1,8 +1,8 @@
 <!-- Paste-ready for the Gumroad product description / content page. Tables are converted to lists. Images are absolute URLs; BASE_URL = https://mendboxstudio.com/docs . Replace SUPERHIVE_URL, GUMROAD_URL, LITE_URL, TRAILER_URL. Same content as index.md. The PLACEHOLDER lines must be replaced by the final GIFs before publishing. -->
 
-# AssetBake 0.2.3: user manual
+# AssetBake 0.2.6: user manual
 
-*Manual for AssetBake 0.2.3 (Blender extension by Mendbox Studio). Written from the add-on's own code: every label, default, range and message below is what the add-on really shows.*
+*Manual for AssetBake 0.2.6 (Blender extension by Mendbox Studio). Written from the add-on's own code: every label, default, range and message below is what the add-on really shows.*
 
 Buy: [Superhive](SUPERHIVE_URL) | [Gumroad](GUMROAD_URL) | Free Lite version: [LITE_URL](LITE_URL) | Website: <https://mendboxstudio.com> | Trailer: TRAILER_URL
 
@@ -72,19 +72,19 @@ The work runs in a second, hidden copy of Blender. **Your Blender stays usable a
 1. In Blender open **Edit > Preferences** (Mac: `Cmd+,`; Windows and Linux: use the menu).
 2. Click **Get Extensions** in the list on the left.
 3. Click the small arrow menu (a down arrow) in the top-right corner and choose **Install from Disk...**
-4. Pick the `assetbake-0.2.3.zip` file and confirm. (Never unpack the zip yourself and copy the folder.)
+4. Pick the `assetbake-0.2.6.zip` file and confirm. (Never unpack the zip yourself and copy the folder.)
 5. The extension turns on. If its checkbox is not ticked, tick it. Close Preferences.
 
 > **[PLACEHOLDER: screenshot of Edit > Preferences > Get Extensions > arrow menu > Install from Disk]**
 
-*If your browser added a note to the file name, for example `assetbake-0.2.3 (1).zip`, that is fine.*
+*If your browser added a note to the file name, for example `assetbake-0.2.6 (1).zip`, that is fine.*
 
 **Where is the panel?**
 
 1. Move the mouse pointer over the **3D Viewport** (the big window with the 3D scene).
 2. Press `N` to open the sidebar (the same key on Mac, Windows and Linux).
 3. Click the tab named **AssetBake** (written vertically at the right edge).
-4. You see two panels: **AssetBake 0.2.3** (settings and the Make Game Asset button) and **Result · AssetBake v0.2.3** below it. The version number in the title tells you which version is installed.
+4. You see two panels: **AssetBake 0.2.6** (settings and the Make Game Asset button) and **Result · AssetBake v0.2.6** below it. The version number in the title tells you which version is installed.
 
 The panel works in **Object Mode**. In any other mode (Edit Mode, Sculpt Mode) the settings are greyed out and the panel says "Go to Object Mode to make an asset".
 
@@ -153,7 +153,7 @@ The sidebar tab **AssetBake** has two panels. All settings are saved in your .bl
 
 *Interim picture from an earlier build ("AI Asset Maker"). The boxes and controls are the same; the title now says AssetBake.*
 
-### 4.1 Panel "AssetBake 0.2.3" (settings), in the order you see it
+### 4.1 Panel "AssetBake 0.2.6" (settings), in the order you see it
 
 #### Box "Mode"
 
@@ -232,7 +232,7 @@ Notes on Scope:
 
 The progress text goes through these stages: Reading the selection, Cleaning the source (N triangles), Splitting into parts (only with one asset per part), Building the low mesh, Reducing the source, Looking for hidden surface, Decimating to the budget, (Quad-dominant: Reading the wall thickness, Building quads, Building quads, second attempt, Checking the quad mesh), Measuring the shape, Unwrapping UVs, Baking (with the map names, and "second pass for N missed texels"), Packing the textures, Saving the result. With several assets the text starts with "Asset 2 of 5:".
 
-### 4.2 Panel "Result · AssetBake v0.2.3"
+### 4.2 Panel "Result · AssetBake v0.2.6"
 
 - **"No result yet"** -- Meaning: No job has run in this scene.
 - **"Working in the background..." / "Finished, waiting for Object Mode"** -- Meaning: A job runs / is finished and waits for Object Mode.
