@@ -329,7 +329,6 @@ STL files contain geometry only: no colours, textures or UVs.
 - No hollowing, no supports, no 3MF export. Made for FDM printing.
 - STL files carry no colours, textures or UVs. The parts you see in Blender get plain viewport colours.
 - Parts are laid out flat with the largest cut face down. If no cut face fits the bed that way, the part is just centred on the ground, and may be marked with a cross.
-- Not tested on Windows or Linux (see section 10).
 
 ---
 
@@ -374,7 +373,7 @@ STL files contain geometry only: no colours, textures or UVs.
 
 **How do I glue the parts?** Push the dowels in (or slide the keys together) (with a drop of glue if you like) and glue the cut faces with cyanoacrylate or epoxy. This is general 3D printing practice; BedSplit does not prescribe a glue.
 
-**Does it work on Windows and Linux?** It is pure Python. Tested on macOS only.
+**Does it work on Windows and Linux?** It is pure Python. Tested on macOS and Windows 11 (x86-64); Linux has not been tested.
 
 **Do I get updates?** Free updates for the 0.x and 1.x line.
 
@@ -386,7 +385,7 @@ STL files contain geometry only: no colours, textures or UVs.
 
 **Support:** support@mendboxstudio.com. Include your Blender version, your operating system, the lines of the Result panel (copy the text), the printer you chose, and if possible the model or a small .blend that shows the problem.
 
-**Compatibility, as tested:** the test suite passes on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS**. Exported parts were also checked by slicing them in PrusaSlicer. Windows and Linux were **not** tested.
+**Compatibility, as tested:** the test suite passes on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS and Windows 11 (x86-64)**. Exported parts were also checked by slicing them in PrusaSlicer.
 
 **License:** GPL-3.0-or-later.
 
