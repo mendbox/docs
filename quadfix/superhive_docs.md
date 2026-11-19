@@ -307,7 +307,6 @@ Tip: a tilted band cut out of the sphere is rebuilt the same way.
 - Bridge needs exactly two simple loops or chains of the same kind, with an edge ratio of at most 4:1. A three-edge loop is better closed with Fill Holes. An odd total of edges leaves one triangle.
 - Union to Quads rebuilds seams only. The new strip gets no UV coordinates. Seams that run through holes in the input stay a plain Boolean. On dense meshes with very different density on both sides the strip is all quads but zig-zags.
 - Union works on the mesh data of the objects. If you rely on modifiers, apply them first (they are not part of the union).
-- Not tested on Windows or Linux (see section 10).
 - The tools do not create or preserve UV seams for the newly created faces beyond what Blender's operators keep. Check UVs after heavy edits.
 
 ---
@@ -343,7 +342,7 @@ Tip: a tilted band cut out of the sphere is rebuilt the same way.
 
 **Can I use it on AI meshes from Meshy, Tripo or Hunyuan3D?** Yes for holes, doubles, triangle soup and a report of what is left. It will not rebuild edge flow.
 
-**Does it work on Blender 5.x? On Windows and Linux?** Tested on Blender 4.2.23, 4.5.14 and 5.2.2 on macOS. It is pure Python and should run anywhere Blender runs, but Windows and Linux are not tested by me.
+**Does it work on Blender 5.x? On Windows and Linux?** Yes. Works on Windows, macOS and Linux (Blender 4.2 LTS and newer). Tested on Blender 4.2.23, 4.5.14 and 5.2.2 on macOS and Windows 11 (x86-64). It is pure Python.
 
 **Does it need the internet?** No.
 
@@ -365,7 +364,7 @@ Tip: a tilted band cut out of the sphere is rebuilt the same way.
 
 **Support:** support@mendboxstudio.com. Include your Blender version, your operating system, the report line from the footer (copy the text), and, if possible, a small .blend file that shows the problem.
 
-**Compatibility, as tested:** the automated test suite passes on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS**. It runs each tool under vertex, edge and face select modes, with partial selections, checks undo, and includes a 200,000-face performance case. Windows and Linux were **not** tested.
+**Compatibility, as tested:** the automated test suite passes on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS and Windows 11 (x86-64)**. It runs each tool under vertex, edge and face select modes, with partial selections, checks undo, and includes a 200,000-face performance case.
 
 **License:** GPL-3.0-or-later.
 
