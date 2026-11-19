@@ -2,6 +2,8 @@
 
 Exact text changes. Nothing here has been applied.
 
+> **Update 2026-11-19:** the "Platforms" / "Tested-on" items below are superseded. QuadFix 1.4.6, QuadFix Lite 1.0.3, IPI 0.2.0 and IPI Lite 0.2.0 passed their full suites on Windows 11 x64 (2026-11-18), and their store pages now say so. BedSplit 0.2.2 is not yet Windows-tested (0.1.3 was), so its store pages carry no Windows claim for now. Do not apply the old "not tested on Windows" wording.
+
 ## 1. BedSplit, Gumroad (and Superhive, check the same line)
 
 **Printer presets: 16 -> 18.** The code has 18 presets. The Gumroad line ends at "Elegoo Neptune 4." Replace the whole "Printer presets" bullet with:
