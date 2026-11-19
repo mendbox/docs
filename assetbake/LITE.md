@@ -106,7 +106,7 @@ Budgets up to 5,000 triangles. 1k textures. No Quad-dominant mode, no per-part a
 
 If you need more than Lite gives, the full **AssetBake** ($18 launch price, $24 regular) adds:
 
-- **Quad-dominant mode**: quads on the thick parts, triangles on thin parts (macOS Apple Silicon and Linux x86-64; not yet on Windows).
+- **Quad-dominant mode**: quads on the thick parts, triangles on thin parts (macOS Apple Silicon, Windows x86-64 and Linux x86-64; Intel Mac not supported yet).
 - Budgets up to **50,000** triangles and **Custom** numbers.
 - **2k and 4k** textures.
 - **Roughness, Metallic, Emission and Alpha** maps, packed as ORM.
