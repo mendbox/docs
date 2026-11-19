@@ -34,7 +34,7 @@ The work runs in a second, hidden copy of Blender. **Your Blender stays usable a
 **Two modes**
 
 - **Game (triangles)** -- What you get: A mesh made only of triangles, as close as possible to your budget. Works on every model and keeps the shape best. | Use it when: You want to put the model in a game, a web page or an AR app. This is the default.
-- **Quad-dominant** -- What you get: A mesh made mostly of **quads** (four-sided faces) on the thick parts and triangles on the thin parts, in one closed mesh. If a model does not allow it, a Game asset is made instead and the Result box tells you why. | Use it when: You want to keep modelling, sculpting or rigging the asset afterwards, where quads are easier to work with. Needs a budget of 5,000 faces or more. Not on Windows yet.
+- **Quad-dominant** -- What you get: A mesh made mostly of **quads** (four-sided faces) on the thick parts and triangles on the thin parts, in one closed mesh. If a model does not allow it, a Game asset is made instead and the Result box tells you why. | Use it when: You want to keep modelling, sculpting or rigging the asset afterwards, where quads are easier to work with. Needs a budget of 5,000 faces or more. Works on macOS, Windows and Linux.
 
 
 > **[PLACEHOLDER: final marketing GIF `anim/webp/wire.webp` goes here: the triangle budget, the shape stays and the mess goes]**
@@ -59,8 +59,8 @@ The work runs in a second, hidden copy of Blender. **Your Blender stays usable a
 **Requirements**
 
 - Blender **4.2 LTS or newer** (4.2 LTS, 4.5 LTS and 5.x). AssetBake is a Blender *extension*.
-- **Tested on macOS and Linux.** The automatic test suite passes on Blender 4.2.23, 4.5.14 and 5.2.2 on a Mac with Apple Silicon. On Linux (x86-64) Game and Quad-dominant were checked on Blender 4.2.23 and 5.2.2. Windows has not been tested yet.
-- **Quad-dominant mode** is built for **macOS (Apple Silicon)** and **Linux (x86-64)**. There is **no Windows build yet**: on Windows the Quad-dominant button is greyed out and **Game mode** does the work. (On a Mac with an Intel processor there is no build either.)
+- **Tested on macOS, Windows and Linux.** The automatic test suite passes on Blender 4.2.23, 4.5.14 and 5.2.2 on a Mac with Apple Silicon and on Windows 11 (x86-64). On Linux (x86-64) Game and Quad-dominant were checked on Blender 4.2.23 and 5.2.2.
+- Platforms: macOS (Apple Silicon), Windows (x86-64) and Linux (x86-64). Intel Mac: not supported yet. **Game mode** and **Quad-dominant** work on all three. Where there is no build (an Intel Mac, Windows on ARM) the Quad-dominant button is greyed out and **Game mode** does the work.
 - Blender's own **"glTF 2.0 format" add-on** must be on (it is on by default). Export GLB needs it.
 - About 2 to 8 GB of free memory for normal AI models (more for very big ones, see section 8).
 - No internet connection and no other software. Everything is inside the zip.
@@ -132,7 +132,7 @@ You need a model. Any mesh object works: an AI model imported as `.glb`, `.fbx`,
 
 ### 3.2 Quad-dominant mode in 5 steps
 
-Do this on a **Mac with Apple Silicon or on Linux** (x86-64). On Windows the mode is not available yet.
+Do this on a **Mac with Apple Silicon, on Windows (x86-64) or on Linux (x86-64)**. On an Intel Mac the mode is not available yet.
 
 1. **Select the model** as above. A model that is a solid object (a character, an animal, a crate) works best. Thin sheets (a leaf, a flag, sheet metal) cannot become quads.
 2. In the AssetBake tab click **Quad-dominant** under **Mode**. The budget now counts **faces** (a quad is one face, a triangle is one face). Choose **10,000** or more. Below 5,000 the button is greyed out. At 5,000 you get a warning that the quad share drops.
@@ -158,8 +158,8 @@ The sidebar tab **AssetBake** has two panels. All settings are saved in your .bl
 #### Box "Mode"
 
 - **Game (triangles)** -- What it does: All triangles, reduced to the budget. Works on every model and keeps the shape best. | When to use it: Almost always. Game engines turn everything into triangles anyway. | Default / options: **On** (default)
-- **Quad-dominant** -- What it does: Quads where the model is thick enough, triangles on thin parts, in one closed mesh. When a model does not allow it, a Game asset is made instead and the Result box says why. | When to use it: You want to edit, sculpt, rig or subdivide the asset later. | Default / options: Off. Greyed out when there is no build for your system (Windows).
-- **Hint under the buttons** -- What it does: In Quad-dominant: "Quads on thick parts, triangles on thin parts." When the mode is not available: "Quad-dominant is not available on Windows (x86-64) yet: the quad remesher has no build for this system. Game mode works." (the system name follows your computer). On a Blender with too old a Python: "Quad-dominant needs Python 3.11 or newer inside Blender. Game mode works."
+- **Quad-dominant** -- What it does: Quads where the model is thick enough, triangles on thin parts, in one closed mesh. When a model does not allow it, a Game asset is made instead and the Result box says why. | When to use it: You want to edit, sculpt, rig or subdivide the asset later. | Default / options: Off. Greyed out when there is no build for your system (for example an Intel Mac).
+- **Hint under the buttons** -- What it does: In Quad-dominant: "Quads on thick parts, triangles on thin parts." When the mode is not available: "Quad-dominant is not available on macOS (Intel) yet: the quad remesher has no build for this system. Game mode works." (the system name follows your computer). On a Blender with too old a Python: "Quad-dominant needs Python 3.11 or newer inside Blender. Game mode works."
 
 
 *Tip:* if a .blend that was saved with Quad-dominant on is opened on a system without the build, the next job makes a Game asset and says so in the Result box ("... A Game asset was made.").
@@ -246,6 +246,8 @@ The progress text goes through these stages: Reading the selection, Cleaning the
 The result is saved with your .blend file.
 
 **Box "Export"** (only in Object Mode)
+
+The **Export** box is shown only when there is something to export (not on "No result yet" and not after Cancel).
 
 - **OpenGL / DirectX** (Normal map)** -- What it does: The convention of the normal map in the exported file. **OpenGL** = green channel up (Blender, Unity, Godot, glTF, three.js). **DirectX** = green channel down: the exported normal map gets its green channel flipped (Unreal Engine). | When to use it: Choose **DirectX** only if your engine wants it. If you do not know, keep OpenGL. | Default / options: **OpenGL**
 - **Also save textures** -- What it does: Besides the GLB, writes the textures as PNG files next to it: `<file>_basecolor.png`, `_orm.png`, `_normal.png`, `_emission.png`. | When to use it: When you want the textures for editing, or for an engine that does not read GLB textures. The GLB always contains the textures too. | Default / options: Off
@@ -379,7 +381,7 @@ When the quad mesh was kept, you may see:
 
 The asset itself is a normal, good Game asset. The mode first tries the quad mesh and **checks** it strictly. If the check fails, it tries **one more time** with a different setting. Only when both fail you get the fallback. You never get a half-repaired quad mesh. Every possible reason:
 
-- **"the quad remesher has no build for this system"** -- What it means: There is no compiled quad remesher for your computer (for example Windows). | What to do: Use Game mode.
+- **"the quad remesher has no build for this system"** -- What it means: There is no compiled quad remesher for your computer (for example an Intel Mac). | What to do: Use Game mode.
 - **"the quad remesher could not be loaded on this system (...)"** -- What it means: The bundled remesher is there but would not start. Often a macOS security block. | What to do: Section 8: "macOS blocked a library".
 - **"the quad remesher stopped with an error (Name: text)"** -- What it means: An unexpected error inside the quad step. | What to do: Run again; if it repeats, send the model to support.
 - **"the source already has fewer triangles than the budget, so there is nothing to remesh"** -- What it means: The source has fewer triangles than the budget. | What to do: Nothing to reduce; use a lower budget or Game mode.
@@ -571,7 +573,7 @@ Where: **Panel** = main panel, **Result** = Result box, **Status bar** = the lin
 - **"Too large: the limit is 8,000,000 triangles. Decimate the source first." / "The selection has N triangles. The limit is 8,000,000: decimate the source first."** -- Where: Panel, Result | Meaning and fix: Too big. In Blender add a **Decimate** modifier (Modifier properties tab > Add Modifier > Generate > Decimate), set a Ratio, **Apply** it, then run again. Or split the model.
 - **"Large input: this takes several minutes and several GB of memory."** -- Where: Panel, Result | Meaning and fix: Over 5 million triangles. It works but needs time and memory. Close other heavy programs.
 - **"Quad-dominant needs at least 5,000 faces." / "Quad-dominant needs a budget of at least 5,000 faces."** -- Where: Panel, Status bar | Meaning and fix: Raise the budget to 5,000 or more, or use Game mode.
-- **"Quad-dominant is not available on Windows (x86-64) yet: the quad remesher has no build for this system. Game mode works."** -- Where: Panel | Meaning and fix: No Windows build yet. Use Game mode.
+- **"Quad-dominant is not available on macOS (Intel) yet: the quad remesher has no build for this system. Game mode works."** -- Where: Panel | Meaning and fix: No build for this system (for example an Intel Mac). Use Game mode.
 - **"Quad-dominant needs Python 3.11 or newer inside Blender. Game mode works."** -- Where: Panel | Meaning and fix: Your Blender is too old (below 4.2). Update Blender.
 - **"Could not start the background job: ..."** -- Where: Result, Status bar | Meaning and fix: The hidden Blender could not be started or its folder could not be written: disk full, no permission, or a security program blocked it. Free disk space, allow Blender to start another Blender process, and try again.
 - **"The job failed: ..."** -- Where: Result (with "Log file for support: ..." and **Copy log path**) | Meaning and fix: An unexpected error in the hidden Blender. The text after the colon says what. Section 8.3 shows where the log is. Send the log to support.
@@ -613,7 +615,7 @@ Where: **Panel** = main panel, **Result** = Result box, **Status bar** = the lin
 - **Textures are missing after I saved the .blend** -- Cause: They are **packed** inside your .blend, so they should be there. If you used **File > External Data > Unpack**, they are written to a `textures` folder next to the .blend; if you moved the .blend without that folder you lose them. | Fix: Keep the `textures` folder with the .blend, or **Pack** again (File > External Data > Pack Resources). For engines, use **Also save textures** or the GLB, which always contains the textures.
 - **The exported GLB has no textures in my viewer** -- Cause: The viewer does not read embedded textures. | Fix: Tick **Also save textures** and use the PNG files.
 - **Quad-dominant button is greyed out on macOS** -- Cause: The remesher library is not loaded. | Fix: See "macOS blocked a library" below.
-- **Quad-dominant button is greyed out on Windows** -- Cause: No Windows build yet. | Fix: Use Game mode.
+- **Quad-dominant button is greyed out** -- Cause: No build for this system (for example an Intel Mac). | Fix: Use Game mode.
 - **Result says Quad-dominant was not possible** -- Cause: See section 5.3. | Fix: Use the reason; try another budget; or keep the Game asset, which is fine.
 - **Result says the source is under budget** -- Cause: Your model has fewer triangles than the budget. | Fix: Nothing to reduce. The model is kept as it is with new UVs and textures. Lower the budget if you want it smaller.
 - **"Assets are not accepted as source"** -- Cause: AssetBake never uses its own assets as a source. | Fix: Select Source.
@@ -629,7 +631,7 @@ Where: **Panel** = main panel, **Result** = Result box, **Status bar** = the lin
 
 **macOS blocked a library.** If the Result says "the quad remesher could not be loaded on this system" or the mode is greyed out after install: macOS sometimes quarantines files that came from a browser download. Install the zip with **Install from Disk** (never unzip it yourself). If it still fails, write to support and quote the exact sentence from the Result box (it names the error). Game mode never needs the library.
 
-**Windows: "Quad-dominant is not available".** Expected: Windows has no remesher build yet. Game mode is complete.
+**"Quad-dominant is not available".** Expected on an Intel Mac and on Windows on ARM: there is no remesher build for them yet. Game mode is complete.
 
 ### 8.3 Where is the error log, and how do I copy its path?
 
@@ -645,8 +647,8 @@ If the count is not within 5 % of the budget, the Result says why (section 5.2):
 
 ### 9.1 Known limitations
 
-- **Tested on macOS and Linux.** Blender 4.2 LTS, 4.5 LTS and 5.x pass the automatic tests on a Mac with Apple Silicon. On Linux (x86-64) Game and Quad-dominant were checked on Blender 4.2.23 and 5.2.2 (same results as on the Mac within 1-2 %). Windows is untested.
-- **Quad-dominant:** no Windows build. About one thick model in eight still falls back to Game for a small local defect, and the result can change between neighbouring budgets and between Blender 4.x and 5.x. Sources over 2,000,000 triangles are not tried. Hidden surface is not removed in this mode. The triangles along the seam between quads and thin parts are closed but stretched. Nothing is promised about rigging or subdivision.
+- **Tested on macOS, Windows and Linux.** Blender 4.2 LTS, 4.5 LTS and 5.x pass the automatic tests on a Mac with Apple Silicon and on Windows 11 (x86-64, 35 of 35 checks per version). On Linux (x86-64) Game and Quad-dominant were checked on Blender 4.2.23 and 5.2.2 (same results as on the Mac within 1-2 %).
+- **Quad-dominant:** no build for an Intel Mac or Windows on ARM. About one thick model in eight still falls back to Game for a small local defect, and the result can change between neighbouring budgets and between Blender 4.x and 5.x. Sources over 2,000,000 triangles are not tried. Hidden surface is not removed in this mode. The triangles along the seam between quads and thin parts are closed but stretched. Nothing is promised about rigging or subdivision.
 - **Rigs, weights, animation, shape keys, constraints are dropped.** The asset is a static mesh in the rest shape.
 - **Transparency is a cut-out only.** No glass-like blending.
 - **Only these material properties are carried over:** base colour, roughness, metallic, emission, alpha, and the shape's normals. Others (clearcoat, transmission, subsurface, anisotropy, displacement) are not.
@@ -716,7 +718,7 @@ If the count is not within 5 % of the budget, the Result says why (section 5.2):
 
 **10. Why did Quad-dominant give me a Game asset?** The model was too thin or the quad mesh failed a strict check. The Result box gives the reason. A try at a different budget often works.
 
-**11. Can I use it on Windows?** Game mode, yes. Quad-dominant has no Windows build yet. Note that we tested on macOS only.
+**11. Can I use it on Windows?** Yes. Game mode and Quad-dominant both work on Windows (x86-64). Not supported yet: an Intel Mac and Windows on ARM.
 
 **12. Which Blender versions?** 4.2 LTS, 4.5 LTS and 5.x (tested on macOS).
 
@@ -748,10 +750,12 @@ If the count is not within 5 % of the budget, the Result says why (section 5.2):
 
 **Source and licence:** the extension is GPL-3.0-or-later. Corresponding source of the bundled remesher (GPL-3.0 section 6): https://github.com/mendbox/im-remesh (tag `v0.1.2`).
 
-**Compatibility, as tested:** Blender 4.2.23, 4.5.14 and 5.2.2 on **macOS** (Apple Silicon): 33 test cases and 1,011 checks per version passed (last full run on the 0.2.2 build). **Linux: checked on Blender 4.2.23 and 5.2.2. Windows was not tested.** Quad-dominant is built for macOS (Apple Silicon) and Linux (x86-64); there is no Windows build yet.
+**Compatibility, as tested:** Blender 4.2.23, 4.5.14 and 5.2.2 on **macOS** (Apple Silicon): 33 test cases and 1,011 checks per version passed (last full run on the 0.2.2 build). **Windows 11 (x86-64): the automatic suite passed on Blender 4.2.23, 4.5.14 and 5.2.2. Linux: checked on Blender 4.2.23 and 5.2.2.** macOS (Apple Silicon), Windows (x86-64) and Linux (x86-64) are supported; Intel Mac: not supported yet.
 
 **Changelog**
 
+- **0.2.6** -- Date: 2026-11-19 | Change: Quad-dominant now also works on **Windows (x86-64)**; macOS (Apple Silicon), Windows (x86-64) and Linux (x86-64) are supported, Intel Mac not yet. The Export box shows only when there is something to export. Game mode says when the source is already under the budget ("The source has N triangles, under the budget of M: nothing to reduce, it is kept as it is.").
+- **0.2.5** -- Date: 2026-11-17 | Change: Quad-dominant handles **TRELLIS.2 crust models** (a second skin under the visible one): the inner layers are left out and the quads follow the visible surface, where every such model became a Game asset before. Includes 0.2.4 (not released on its own): a source under the budget keeps its geometry in Quad-dominant.
 - **0.2.3** -- Date: 2026-11-17 | Change: The panel title shows the version. Quad-dominant: faces that share the same three points are reduced to one, so the GLB matches the asset.
 - **0.2.2** -- Date: 2026-11-17 | Change: Better use of the texture space of some UV layouts (a rule about where each face starts).
 - **0.2.1** -- Date: 2026-11-17 | Change: Product renamed to **AssetBake** (formerly "AI Asset Maker"). The result no longer depends on the order of the source's points and faces. Review fixes.
