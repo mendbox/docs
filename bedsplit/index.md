@@ -27,6 +27,12 @@ It is made for FDM printers (the common kind that melts plastic filament).
 
 ---
 
+### Dovetail keys
+
+Since version 0.2 you can join the parts with interlocking dovetail keys instead of dowels: a key on one part and a socket in the other, so there is nothing loose to print. Push the parts together and slide until the key stops. The clearance is 0.2 mm by default and you can change it. The keys are printed as part of the parts, with no supports needed for the key or the socket. On a part that has no flat side to stand on, BedSplit uses dowels on that cut instead and says so in the Result panel.
+
+![Dovetail keys: push together, slide to lock](../assets/bedsplit/gif_keys.gif)
+
 ## 2. Requirements and installation
 
 **Requirements**
@@ -87,7 +93,7 @@ If no mesh is selected the panel shows "Select a mesh object".
 4. Press **Split to Bed**. The parts appear next to your model, flat, each in its own colour. The **Result** panel lists every part with a check mark.
 5. Press **Export STL** and choose a folder. Print all part files, and the dowel file as many times as its name says.
 
-![Panel clicks: split a model](../assets/bedsplit/gif_panel_split.gif)
+![Panel clicks: split a model](../assets/bedsplit/gif_panel_split_022.gif)
 
 ---
 
@@ -247,7 +253,7 @@ STL files contain geometry only: no colours, textures or UVs.
 
 ![Dowels and sockets](../assets/bedsplit/gif_dowels.gif)
 
-### Example 7: Dovetail keys instead of dowels
+### Example 6: Dovetail keys instead of dowels
 
 1. Select the model, choose your printer, press **Find Cuts**.
 2. In the box **Joints** click **Dovetail keys**. To use keys on one cut only, set that cut from **Auto** to **Key** instead.
@@ -256,7 +262,7 @@ STL files contain geometry only: no colours, textures or UVs.
 
 ![Dovetail keys](../assets/bedsplit/gif_keys.gif)
 
-### Example 6: A broken AI model
+### Example 7: A broken AI model
 
 1. Import the Meshy, Tripo or Hunyuan3D model. Select it.
 2. Press **Split to Bed**. The Result panel says "Repaired: holes closed, normals fixed", "overlapping shells joined" or "surface rebuilt".
