@@ -325,7 +325,7 @@ Tile size table (square tiles; the atlas is limited to 16384 px per side). This 
 
 **Does it work in EEVEE and Cycles?** Yes. The tests render in Cycles; both engines use the same material.
 
-**Does it work on Windows and Linux?** Yes. Works on Windows, macOS and Linux (Blender 4.2 LTS and newer). It is pure Python. Tested on macOS and Windows 11 (x86-64) (see section 10).
+**Does it work on Windows and Linux?** Yes. Works on Windows, macOS and Linux (Blender 4.2 LTS and newer). It is pure Python. Tested on macOS, Windows 11 and Linux (x86-64) (see section 10).
 
 **Can I animate it?** Yes, in the Animate sub-panel.
 
@@ -339,7 +339,7 @@ Tile size table (square tiles; the atlas is limited to 16384 px per side). This 
 
 **Support:** support@mendboxstudio.com. Include your Blender version, your operating system, the message from the status bar, and if possible a small .blend file and two or three sample images.
 
-**Compatibility, as tested:** the automated tests pass on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS and Windows 11 (x86-64)**. They build the scene, apply the add-on and check the rendered colour of every tile (separate objects and Geometry Nodes instances), plus fit modes, assign and match by name, mapping without UVs, animation, variation, the shuffle order, empty-folder handling and multi-slot sources. The 0.2.0 build was also clicked through by hand in Blender (a 20-step checklist).
+**Compatibility, as tested:** the automated tests pass on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS, Windows 11 and Linux (x86-64)**. They build the scene, apply the add-on and check the rendered colour of every tile (separate objects and Geometry Nodes instances), plus fit modes, assign and match by name, mapping without UVs, animation, variation, the shuffle order, empty-folder handling and multi-slot sources. The 0.2.0 build was also clicked through by hand in Blender (a 20-step checklist).
 
 **License:** GPL-3.0-or-later.
 

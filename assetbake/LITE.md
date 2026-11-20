@@ -26,7 +26,7 @@ Lite is free and is the Game (triangles) mode with small limits. It is GPL-3.0-o
 
 ## 2. Requirements, install, update, uninstall
 
-- Blender **4.2 LTS or newer** (4.2, 4.5, 5.x). Tested on **macOS only**; Windows and Linux have not been tested. Blender's own "glTF 2.0 format" add-on must be on (default).
+- Blender **4.2 LTS or newer** (4.2, 4.5, 5.x). Tested on **macOS and Linux** (Windows is covered by the same pure-Python code but has not been tested). Blender's own "glTF 2.0 format" add-on must be on (default).
 - The extension is a **.zip**. **Do not unzip it.**
 
 **Install:** Edit > Preferences (Mac `Cmd+,`) > **Get Extensions** > arrow menu at the top right > **Install from Disk...** > pick the zip > tick the extension if it is not ticked.

@@ -323,7 +323,7 @@ Tip: a tilted band cut out of the sphere is rebuilt the same way.
 
 **Can I use it on AI meshes from Meshy, Tripo or Hunyuan3D?** Yes for holes, doubles, triangle soup and a report of what is left. It will not rebuild edge flow.
 
-**Does it work on Blender 5.x? On Windows and Linux?** Yes. Works on Windows, macOS and Linux (Blender 4.2 LTS and newer). Tested on Blender 4.2.23, 4.5.14 and 5.2.2 on macOS and Windows 11 (x86-64). It is pure Python.
+**Does it work on Blender 5.x? On Windows and Linux?** Yes. Works on Windows, macOS and Linux (Blender 4.2 LTS and newer). Tested on Blender 4.2.23, 4.5.14 and 5.2.2 on macOS, Windows 11 and Linux (x86-64). It is pure Python.
 
 **Does it need the internet?** No.
 
@@ -344,7 +344,7 @@ Tip: a tilted band cut out of the sphere is rebuilt the same way.
 
 **Support:** support@mendboxstudio.com. Include your Blender version, your operating system, the report line from the footer (copy the text), and, if possible, a small .blend file that shows the problem.
 
-**Compatibility, as tested:** the automated test suite passes on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS and Windows 11 (x86-64)**. It runs each tool under vertex, edge and face select modes, with partial selections, checks undo, and includes a 200,000-face performance case.
+**Compatibility, as tested:** the automated test suite passes on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS, Windows 11 and Linux (x86-64)**. It runs each tool under vertex, edge and face select modes, with partial selections, checks undo, and includes a 200,000-face performance case.
 
 **License:** GPL-3.0-or-later.
 

@@ -349,7 +349,7 @@ STL files contain geometry only: no colours, textures or UVs.
 
 **How do I glue the parts?** Push the dowels in (or slide the keys together) (with a drop of glue if you like) and glue the cut faces with cyanoacrylate or epoxy. This is general 3D printing practice; BedSplit does not prescribe a glue.
 
-**Does it work on Windows and Linux?** It is pure Python. Tested on macOS and Windows 11 (x86-64); Linux has not been tested.
+**Does it work on Windows and Linux?** It is pure Python. Tested on macOS, Windows 11 (x86-64) and Linux (x86-64).
 
 **Do I get updates?** Free updates for the 0.x and 1.x line.
 
@@ -360,7 +360,7 @@ STL files contain geometry only: no colours, textures or UVs.
 
 **Support:** support@mendboxstudio.com. Include your Blender version, your operating system, the lines of the Result panel (copy the text), the printer you chose, and if possible the model or a small .blend that shows the problem.
 
-**Compatibility, as tested:** the test suite passes on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS and Windows 11 (x86-64)**. Exported parts were also checked by slicing them in PrusaSlicer.
+**Compatibility, as tested:** the test suite passes on Blender **4.2.23, 4.5.14 and 5.2.2 on macOS, Windows 11 and Linux (x86-64)**. Exported parts were also checked by slicing them in PrusaSlicer.
 
 **License:** GPL-3.0-or-later.
 
